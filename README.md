@@ -1,7 +1,7 @@
 # Mosquittopp-Client-Class
 
-Simple MQTT Mosquitopp client class inspired by:
-https://github.com/paraka/mosquittopp
+Simple MQTT Mosquitopp client class inspired by:   
+https://github.com/paraka/mosquittopp   
 https://github.com/Auctoris/mosquitopp_client
 
 Easy connections, subscriptions and publishing.
