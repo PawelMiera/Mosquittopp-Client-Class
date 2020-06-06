@@ -13,3 +13,10 @@ sudo apt-get install libmosquittopp-dev
 sudo apt-get install libmosquitto-dev
 ```
 
+```
+g++ main.cpp MQTT.cpp -lmosquittopp
+```
+
+```
+./a.out 
+```
