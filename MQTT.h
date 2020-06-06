@@ -5,15 +5,14 @@
 #include "mosquittopp.h"
 #include <vector>
 #include <unistd.h>
-//#include "autopilot_interface.h"
 
 class MQTT : public mosqpp::mosquittopp
 {
 public:
 
-	MQTT(const char * _host, int _port);		     //Autopilot_Interface &autopilot_interface
-	MQTT(const char * _host, int _port,int _keepalive);//Autopilot_Interface &autopilot_interface
-	MQTT();		//Autopilot_Interface &autopilot_interface
+	MQTT(const char * _host, int _port);
+	MQTT(const char * _host, int _port,int _keepalive);
+	MQTT();
 	~MQTT();
 	void stop();
 	void mqtt_send_message(std::string topic, std::string msg);
@@ -21,7 +20,6 @@ public:
 
 private:
 
-	//Autopilot_Interface &api;
 	const char *host;
 	std::vector<std::string> topics;
 	int port, keepalive;

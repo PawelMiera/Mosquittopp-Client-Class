@@ -1,7 +1,7 @@
 #include "MQTT.h"
 
 
-MQTT::MQTT(const char * _host, int _port)	//Autopilot_Interface &api;
+MQTT::MQTT(const char * _host, int _port)
 {
 	mosqpp::lib_init();        
 	keepalive = 60;    
@@ -12,7 +12,7 @@ MQTT::MQTT(const char * _host, int _port)	//Autopilot_Interface &api;
 	std::cout<<"MQTT On\n";
 }
 
-MQTT::MQTT(const char * _host, int _port,int _keepalive)	//Autopilot_Interface &api;
+MQTT::MQTT(const char * _host, int _port,int _keepalive)
 {
 	mosqpp::lib_init();    
 	keepalive = _keepalive;  
@@ -24,7 +24,7 @@ MQTT::MQTT(const char * _host, int _port,int _keepalive)	//Autopilot_Interface &
 }
 
 ///////////////////////////////////| automatic constructor | /////////////////////////////////////
-MQTT::MQTT()		//Autopilot_Interface &autopilot_interface
+MQTT::MQTT()
 {
 	automatic=true;
 	mosqpp::lib_init();        
