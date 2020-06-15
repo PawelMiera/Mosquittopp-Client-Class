@@ -33,13 +33,7 @@ MQTT::MQTT()
 	host = auto_host;
 	connect_async(host, port,keepalive);
 	loop_start();        
-	std::cout<<"MQTT On\n";
-	usleep(100);
-	for(int i = 0; i<auto_topics.size();i++)
-	{
-		mqtt_subscribe(auto_topics[i]);
-	}
-	
+	std::cout<<"MQTT On\n";	
 
 }
 
@@ -110,31 +104,6 @@ void MQTT::on_message(const struct mosquitto_message *message)
 	std::string msg_payload = std::string((char *)message->payload, message->payloadlen);
 
 	std::cout <<"Received message: " << msg_payload << " on topic: " << msg_topic<< std::endl;
-
-        if(msg_topic == "main/getTelemetry")
-        {
-                if(msg_payload=="1")
-                {
-
-			/*mavlink_local_position_ned_t pos = api.current_messages.local_position_ned;
-			std::string x = std::to_string(pos.x);
-			std::string y = std::to_string(pos.y);
-			std::string z = std::to_string(pos.z);
-			std::string output = "x"+x+"y"+y+"z"+z+"e";
-			std::cout<<"replying: "<<output<<std::endl;
-                        mqtt::topic top(cli_, PUBLISH_TOPIC, 1, true);
-                       	top.publish(std::move(output));
-			*/
-			mqtt_send_message("main/telemetry", "telemetria");
-                }
-        }
-        if(msg_topic == "watchdog/telemetry")
-        {
-                if(msg_payload=="1")
-                {
-			mqtt_send_message("watchdogReply/telemetry", "1");
-                }
-        }
 
 }
 
