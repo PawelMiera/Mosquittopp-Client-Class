@@ -23,7 +23,7 @@ private:
 	const char *host;
 	std::vector<std::string> topics;
 	int port, keepalive;
-	bool reconnected=false;
+	bool reconnected=true;
 
 	bool automatic=false;
 	const char *auto_host = "localhost";
