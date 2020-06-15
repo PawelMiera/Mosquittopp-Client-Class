@@ -31,6 +31,7 @@ MQTT::MQTT()
 	keepalive = auto_keepalive;   
 	port = auto_port;
 	host = auto_host;
+	topics = auto_topics;
 	connect_async(host, port,keepalive);
 	loop_start();        
 	std::cout<<"MQTT On\n";	
